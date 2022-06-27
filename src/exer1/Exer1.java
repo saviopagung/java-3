@@ -6,7 +6,7 @@ import exer1.transacao.PagamentoSevico;
 import exer1.transacao.SaqueDinheiro;
 import exer1.transacao.Transferencia;
 
-public class Exercicio {
+public class Exer1 {
     public static void main(String[] args) {
         ConsultaSaldo consultaSaldo = new ConsultaSaldo();
         Deposito deposito = new Deposito();

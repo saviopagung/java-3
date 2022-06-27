@@ -7,7 +7,7 @@ import exer2.relatorio.Relatorio;
 
 import java.util.ArrayList;
 
-public class Exemplo {
+public class Exer2 {
     public static void main(String[] args) {
         //Informações para o curriculo
         Pessoa candidato = new Pessoa("Savio", 24, "Masculino", "Chefe de cozinha");
