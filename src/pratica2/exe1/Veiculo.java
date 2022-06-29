@@ -35,8 +35,19 @@ public class Veiculo implements Comparable<Veiculo>{
         return preco;
     }
 
+    //para o exercicio3
     @Override
     public int compareTo(Veiculo v) {
         return (int) (this.preco - v.getPreco());
+    }
+
+    //para o exercicio4
+    public int compareToStr(Veiculo v) {
+        return this.getMarca().compareTo(v.getMarca());
+    }
+
+    @Override
+    public String toString(){
+        return "Modelo: " + this.getModelo() + " | Marca: " + this.getMarca() + " | Preço: " + this.getPreco();
     }
 }

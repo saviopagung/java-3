@@ -4,6 +4,7 @@ import pratica2.exe1.Garagem;
 import pratica2.exe1.Veiculo;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -42,12 +43,44 @@ public class Main {
         Veiculo carro11 = new Veiculo("Logan", "Renault", 950.0);
         veiculos.add(carro11);
 
-        Garagem garagem = new Garagem(1, veiculos);
-        garagem.getVeiculos().sort((a, b) -> a.compareTo(b));
 
+        Garagem garagem = new Garagem(1, veiculos);
+        //exercicio 3
+        garagem.getVeiculos().sort((a, b) -> a.compareTo(b));
         for (Veiculo veiculo :garagem.getVeiculos()) {
             System.out.println(veiculo.getPreco());
         }
 
+        //exercicio 4
+        garagem.getVeiculos().sort((a, b) -> a.compareToStr(b));
+        for (Veiculo veiculo :garagem.getVeiculos()) {
+            System.out.println(veiculo.getMarca());
+        }
+
+        //exercicio 5
+        System.out.println("--- Menor que 100 ---");
+        List<Veiculo> precoMaiorQue1000 = garagem.getVeiculos()
+                .stream()
+                .filter(v -> v.getPreco() < 1000)
+                .collect(Collectors.toList());
+        for (Veiculo v : precoMaiorQue1000) {
+            System.out.println(v);
+        }
+
+        System.out.println("\n\n--- Maior que 100 ---");
+        List<Veiculo> precoMenorIgual1000 = garagem.getVeiculos()
+                .stream()
+                .filter(v -> v.getPreco() >= 1000)
+                .collect(Collectors.toList());
+        for (Veiculo v : precoMenorIgual1000) {
+            System.out.println(v);
+        }
+
+        //media
+//        double avg = garagem.getVeiculos()
+//                .stream()
+//                .mapToInt()
+
     }
+
 }
