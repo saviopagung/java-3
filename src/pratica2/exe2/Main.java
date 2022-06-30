@@ -77,9 +77,12 @@ public class Main {
         }
 
         //media
-//        double avg = garagem.getVeiculos()
-//                .stream()
-//                .mapToInt()
+        double avg = garagem.getVeiculos()
+                .stream().mapToDouble(p -> p.getPreco())
+                .average()
+                .getAsDouble();
+
+        System.out.println("-------------\nMedia de preco: " + avg + "\n-------------");
 
     }
 
